@@ -78,29 +78,66 @@ Open the script inside the IDA Python environment.
 ## 3. Run FuncTriage
 
 ```python
-
 main()
-4. Review Results
+```
+
+## 4. Review Results
 
 Analyze the ranked output directly from the IDA console.
 
-🧠 Use Cases
+---
+
+# 🧠 Use Cases
 
 FuncTriage is useful for:
 
-Malware analysis
-Binary unpacking workflows
-Reverse engineering unknown binaries
-Identifying core execution logic
-Prioritizing functions during manual analysis
-Reducing reverse engineering time
-🔥 Real Usage
-Sample 1 — Referenced Functions
-<p align="center"> <img src="https://github.com/di553c70r/FuncTriage/blob/main/sample1.png" width="1000"> </p>
-Sample 2 — Zero-Xref Functions
-<p align="center"> <img src="https://github.com/di553c70r/FuncTriage/blob/main/sample2.png" width="1000"> </p>
-⚠ Limitations
-Indirect call resolution is heuristic-based
-Dynamically resolved APIs may not always be detected
-Heavy obfuscation or VM-based protections may reduce scoring accuracy
-CFG-based scoring may be skewed in heavily optimized binaries
+- Malware analysis
+- Binary unpacking workflows
+- Reverse engineering unknown binaries
+- Identifying core execution logic
+- Prioritizing functions during manual analysis
+- Reducing reverse engineering time
+
+---
+
+# 🔥 Real Usage
+
+## Sample 1 — Referenced Functions
+
+<p align="center">
+  <img src="screenshots/sample1.png" width="1000">
+</p>
+
+---
+
+## Sample 2 — Zero-Xref Functions
+
+<p align="center">
+  <img src="screenshots/sample2.png" width="1000">
+</p>
+
+---
+
+# ⚠ Limitations
+
+- Indirect call resolution is heuristic-based
+- Dynamically resolved APIs may not always be detected
+- Heavy obfuscation or VM-based protections may reduce scoring accuracy
+- CFG-based scoring may be skewed in heavily optimized binaries
+
+---
+
+# 🔮 Future Improvements
+
+- Behavior classification (inject / hook / unpack / network)
+- CFG graph export support
+- Enhanced indirect call resolution
+- Import and syscall normalization
+- Plugin-style IDA integration
+- ML-assisted function prioritization
+
+---
+
+# 📜 License
+
+Released for educational and reverse engineering research purposes.
