@@ -102,7 +102,7 @@ FuncTriage is useful for:
 
 # 🔥 Real Usage
 
-## Sample 1 — Referenced Functions
+## Sample 1 
 
 <p align="center">
   <img src="screenshots/sample1.png" width="1000">
@@ -110,33 +110,13 @@ FuncTriage is useful for:
 
 ---
 
-## Sample 2 — Zero-Xref Functions
-
+## Sample 2 
 <p align="center">
   <img src="screenshots/sample2.png" width="1000">
 </p>
 
 ---
 
-# ⚠ Limitations
-
-- Indirect call resolution is heuristic-based
-- Dynamically resolved APIs may not always be detected
-- Heavy obfuscation or VM-based protections may reduce scoring accuracy
-- CFG-based scoring may be skewed in heavily optimized binaries
-
----
-
-# 🔮 Future Improvements
-
-- Behavior classification (inject / hook / unpack / network)
-- CFG graph export support
-- Enhanced indirect call resolution
-- Import and syscall normalization
-- Plugin-style IDA integration
-- ML-assisted function prioritization
-
----
 
 # 📜 License
 
