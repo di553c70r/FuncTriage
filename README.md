@@ -1,67 +1,48 @@
 FuncTriage
 
-FuncTriage is an IDA Pro script designed to triage and prioritize functions in binary analysis using structural heuristics, cross-reference data, and API usage patterns.
+FuncTriage is an IDA Pro script designed to triage and prioritize functions during binary analysis using structural heuristics, cross-reference analysis, and behavioral indicators.
 
-It helps reverse engineers quickly identify high-value or suspicious functions such as:
+It helps reverse engineers quickly surface high-value or suspicious routines such as:
 
-unpacking / decoding routines
-hooking and trampoline logic
-memory injection behavior
-thread manipulation and execution control
-core orchestration logic in unknown binaries
+Unpacking / decoding logic
+Hooking and trampoline routines
+Memory injection behavior
+Thread manipulation and execution control
+Core orchestration logic in unknown binaries
 🔍 Overview
 
-FuncTriage scans all functions in a binary and assigns a heuristic score based on:
+FuncTriage scans every function in a binary and assigns a heuristic score based on:
 
-Control-flow complexity (basic blocks)
-Cross-reference frequency (function usage)
+Control-flow complexity (basic block count)
+Cross-reference frequency
 API usage patterns
-Zero-xref function heuristics (potential hidden logic)
+Zero-xref heuristics (potential hidden or indirectly invoked logic)
 
-It then groups functions into:
+The script categorizes results into two major groups:
 
 ✔ Referenced Functions
 
-Functions that are actively called by other parts of the binary.
+Functions actively referenced or called throughout the binary.
 
 ⚠ Zero-Xref Functions (Heuristic)
 
-Functions with no detected incoming references but strong behavioral indicators—often hidden or indirectly used logic.
+Functions with no detected incoming references but strong structural or behavioral indicators that may suggest hidden, indirect, or dynamically resolved execution paths.
 
 ⚙️ Features
-Function scoring system based on structure + behavior
+Heuristic-based function scoring
+CFG complexity analysis
+Cross-reference frequency analysis
 API extraction from direct and indirect calls
-Cross-reference analysis for call frequency
-Zero-xref detection for hidden logic paths
-Clean, structured output in IDA console
+Zero-xref function detection
+Clean, structured console output
 Lightweight and fast execution
-📊 Example Output
-Referenced Functions
+Useful for malware triage and unknown binary analysis
+📊 Output
 
-Functions ranked by importance score, including:
+FuncTriage ranks functions using multiple structural and behavioral signals.
 
-address
-name
-xref count
-basic blocks
-heuristic score
-Zero-Xref Functions
+Each entry includes:
 
-Functions with no incoming references but strong structural or behavioral signals.
-
-Add screenshots here to visually demonstrate output.
-
-Example:
-
-screenshots/referenced_functions.png  
-screenshots/zero_xref_functions.png
-🚀 Usage
-Open a binary in IDA Pro
-Load the script into the IDA Python environment
-Run:
-main()
-Review the ranked function output in the console
-📁 Output Fields
 Field	Description
 Address	Function entry address
 Function	Function name
@@ -69,6 +50,12 @@ Xrefs	Number of incoming references
 BBs	Basic block count (CFG complexity)
 Score	Final heuristic importance score
 APIs	Detected API calls
+🚀 Usage
+Open a binary in IDA Pro
+Load the script into the IDA Python environment
+Run:
+main()
+Review the ranked analysis output in the IDA console
 🧠 Use Cases
 
 FuncTriage is useful for:
@@ -76,15 +63,11 @@ FuncTriage is useful for:
 Malware analysis
 Binary unpacking workflows
 Reverse engineering unknown binaries
-Identifying core logic quickly
-Reducing manual function inspection time
-
-## Real Usage
-
-### Sample 1
-
-![Sample 1]([screenshots/referenced_functions.png](https://github.com/di553c70r/FuncTriage/blob/main/sample1.png))
-
-### Sample 2
-
-![Sample 2]([screenshots/zero_xref_functions.png](https://github.com/di553c70r/FuncTriage/blob/main/sample2.png))
+Identifying core execution logic
+Prioritizing functions during manual analysis
+Reducing reverse engineering time
+🔥 Real Usage
+Sample 1 — Referenced Functions
+<p align="center"> <img src="https://github.com/di553c70r/FuncTriage/blob/main/sample1.png" width="1000"> </p>
+Sample 2 — Zero-Xref Functions
+<p align="center"> <img src="https://github.com/di553c70r/FuncTriage/blob/main/sample2.png" width="1000"> </p>
